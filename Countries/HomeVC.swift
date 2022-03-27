@@ -12,6 +12,12 @@ class HomeVC: UIViewController {
     @IBOutlet weak var countriesTableView: UITableView!
     
     private var countries = [Country]()
+    private var favCountries = [Country](){
+        didSet{
+            SCTransfer.instance.countries = favCountries
+        }
+    }
+    
     private let cellSpacing: CGFloat = 5
     
     override func viewDidLoad() {
@@ -50,20 +56,38 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = countriesTableView.dequeueReusableCell(withIdentifier: "cell") as! CountryCell
         
         cell.textLabel?.text = countries[indexPath.section].name
         
+        cell.backgroundColor = UIColor.white
+        cell.layer.borderColor = UIColor.black.cgColor
+        cell.layer.borderWidth = 2
+        cell.layer.cornerRadius = 8
+        cell.clipsToBounds = true
+        
+        
+        
+        cell.buttonPressed = { [weak self] in
+            guard let self = self else { return }
+            if self.favCountries.contains(self.countries[indexPath.section]){
+                
+                self.favCountries = self.favCountries.filter{$0 != self.countries[indexPath.section]}
+                cell.FavButton.setImage(UIImage(systemName: "star"), for: .normal)
+            }else{
+                
+                self.favCountries.append(self.countries[indexPath.section])
+                cell.FavButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+            }
+        }
         return cell
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("DEBUG: cell selected")
+        print("DEBUG: cell selected \(countries[indexPath.section].name!)")
     }
-    
-
-    
-    
 }
 
 

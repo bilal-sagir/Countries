@@ -18,7 +18,7 @@
 		9C4CB11027EFBCEA006824D5 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4CB10F27EFBCEA006824D5 /* Country.swift */; };
 		9C4CB11227EFC4D1006824D5 /* CountriesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4CB11127EFC4D1006824D5 /* CountriesDTO.swift */; };
 		9C4CB11727EFDB89006824D5 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4CB11527EFDB89006824D5 /* CountryCell.swift */; };
-		9C4CB11827EFDB89006824D5 /* CountryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C4CB11627EFDB89006824D5 /* CountryCell.xib */; };
+		9C4CB11D27EFE819006824D5 /* SCTransfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4CB11C27EFE819006824D5 /* SCTransfer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +36,7 @@
 		9C4CB10F27EFBCEA006824D5 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		9C4CB11127EFC4D1006824D5 /* CountriesDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesDTO.swift; sourceTree = "<group>"; };
 		9C4CB11527EFDB89006824D5 /* CountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
-		9C4CB11627EFDB89006824D5 /* CountryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryCell.xib; sourceTree = "<group>"; };
+		9C4CB11C27EFE819006824D5 /* SCTransfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCTransfer.swift; sourceTree = "<group>"; };
 		A05615834728D52327CE2350 /* Pods-Countries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Countries.release.xcconfig"; path = "Target Support Files/Pods-Countries/Pods-Countries.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,7 +99,6 @@
 			isa = PBXGroup;
 			children = (
 				9C4CB11527EFDB89006824D5 /* CountryCell.swift */,
-				9C4CB11627EFDB89006824D5 /* CountryCell.xib */,
 			);
 			name = CellModel;
 			sourceTree = "<group>";
@@ -109,6 +108,7 @@
 			children = (
 				9C4CB11927EFDB94006824D5 /* CellModel */,
 				9C4CB0FD27EFBC4A006824D5 /* HomeVC.swift */,
+				9C4CB11C27EFE819006824D5 /* SCTransfer.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -190,7 +190,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C4CB11827EFDB89006824D5 /* CountryCell.xib in Resources */,
 				9C4CB10627EFBC4B006824D5 /* LaunchScreen.storyboard in Resources */,
 				9C4CB10327EFBC4B006824D5 /* Assets.xcassets in Resources */,
 				9C4CB10127EFBC4A006824D5 /* Main.storyboard in Resources */,
@@ -252,6 +251,7 @@
 				9C4CB0FA27EFBC4A006824D5 /* AppDelegate.swift in Sources */,
 				9C4CB10E27EFBC91006824D5 /* Apicall.swift in Sources */,
 				9C4CB0FC27EFBC4A006824D5 /* SceneDelegate.swift in Sources */,
+				9C4CB11D27EFE819006824D5 /* SCTransfer.swift in Sources */,
 				9C4CB11727EFDB89006824D5 /* CountryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
