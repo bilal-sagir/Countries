@@ -6,16 +6,19 @@
 //
 
 import UIKit
+import Kingfisher
 
 class DetailVC: UIViewController {
     
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var cLbl: UILabel!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     private var country: Country!
     private var flag: String = ""{
         didSet{
-            print(flag)
+            self.imgView.kf.setImage(with: URL(string: flag), options: [.processor(SVGImgProcessor())])
+            spinner.stopAnimating()
         }
     }
     private var wikiDataId: String = ""{
@@ -27,8 +30,13 @@ class DetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        spinner.startAnimating()
+        
         country = SCTransfer.instance.country
-        cLbl.text = "Countrycode: \(country.code!)"
+        cLbl.attributedText = attString(t1: "Country Code: ", t2: country.code)
+        
+        
+        
         navigationItem.title = country.name
         
         Apicall.fetchCountries(code: country.code!) { dto in
@@ -37,6 +45,19 @@ class DetailVC: UIViewController {
                 self.wikiDataId = dto.data.wikiDataID
             }
         }
+
+    }
+    
+    func attString(t1: String, t2: String) -> NSMutableAttributedString {
+        let boldText = t1
+        let attrs = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 15)]
+        let attributedString = NSMutableAttributedString(string:boldText, attributes:attrs)
+
+        let normalText = t2
+        let normalString = NSMutableAttributedString(string:normalText)
+
+        attributedString.append(normalString)
+        return attributedString
     }
     
     @IBAction func buttonTapped(_ sender: UIButton) {

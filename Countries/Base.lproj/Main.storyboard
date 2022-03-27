@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -72,34 +73,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QCn-Nd-w5z">
-                                <rect key="frame" x="0.0" y="88" width="414" height="256"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QCn-Nd-w5z">
+                                <rect key="frame" x="0.0" y="88" width="414" height="239"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vga-U5-B9D">
-                                <rect key="frame" x="20" y="352" width="150" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vga-U5-B9D">
+                                <rect key="frame" x="20" y="335" width="150" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2p-fa-xJ1">
-                                <rect key="frame" x="20" y="381" width="132" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2p-fa-xJ1">
+                                <rect key="frame" x="20" y="364" width="239" height="36"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="NHO-fM-oJA"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="For More Information →"/>
                                 <connections>
                                     <action selector="buttonTapped:" destination="E69-lF-t2W" eventType="touchUpInside" id="d7j-t1-T6L"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="RZr-AA-zGQ">
+                                <rect key="frame" x="197" y="206" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ML8-0L-wD8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Vga-U5-B9D" firstAttribute="leading" secondItem="22R-Ja-M74" secondAttribute="leadingMargin" id="10n-jd-Owh"/>
+                            <constraint firstItem="Vga-U5-B9D" firstAttribute="top" secondItem="QCn-Nd-w5z" secondAttribute="bottom" constant="8" id="AdX-SU-zDX"/>
+                            <constraint firstItem="ML8-0L-wD8" firstAttribute="trailing" secondItem="t2p-fa-xJ1" secondAttribute="trailing" constant="155" id="DdX-jQ-Kux"/>
+                            <constraint firstItem="QCn-Nd-w5z" firstAttribute="centerX" secondItem="22R-Ja-M74" secondAttribute="centerX" id="Jka-40-7SX"/>
+                            <constraint firstItem="ML8-0L-wD8" firstAttribute="bottom" secondItem="t2p-fa-xJ1" secondAttribute="bottom" constant="413" id="MQ0-TC-YoV"/>
+                            <constraint firstItem="QCn-Nd-w5z" firstAttribute="centerX" secondItem="RZr-AA-zGQ" secondAttribute="centerX" id="PuY-z2-d4h"/>
+                            <constraint firstItem="ML8-0L-wD8" firstAttribute="trailing" secondItem="Vga-U5-B9D" secondAttribute="trailing" constant="244" id="bvq-RU-zm6"/>
+                            <constraint firstItem="t2p-fa-xJ1" firstAttribute="top" secondItem="Vga-U5-B9D" secondAttribute="bottom" constant="8" id="dgF-pe-BSJ"/>
+                            <constraint firstItem="QCn-Nd-w5z" firstAttribute="leading" secondItem="ML8-0L-wD8" secondAttribute="leading" id="qh4-Te-J24"/>
+                            <constraint firstItem="RZr-AA-zGQ" firstAttribute="top" secondItem="ML8-0L-wD8" secondAttribute="top" constant="118" id="r7w-VI-8BF"/>
+                            <constraint firstItem="Vga-U5-B9D" firstAttribute="leading" secondItem="t2p-fa-xJ1" secondAttribute="leading" id="rK4-DF-uHE"/>
+                            <constraint firstItem="QCn-Nd-w5z" firstAttribute="top" secondItem="ML8-0L-wD8" secondAttribute="top" id="y9k-eQ-2fX"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7WX-7Q-h0L"/>
                     <connections>
                         <outlet property="cLbl" destination="Vga-U5-B9D" id="HSe-he-fHs"/>
                         <outlet property="imgView" destination="QCn-Nd-w5z" id="fH2-TR-rWa"/>
+                        <outlet property="spinner" destination="RZr-AA-zGQ" id="aSz-zD-HqW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TdD-0u-1gZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -226,6 +248,9 @@
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
