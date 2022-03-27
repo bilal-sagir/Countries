@@ -13,7 +13,6 @@ class Country: NSObject {
     var code: String!
     
     override init(){
-        
     }
     
     init(name: String, code: String){

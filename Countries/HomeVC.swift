@@ -9,13 +9,14 @@ import UIKit
 
 class HomeVC: UIViewController {
 
+    //MARK: - Outlets
     @IBOutlet weak var countriesTableView: UITableView!
     
+    //MARK: - Variables
     private var countries = [Country]()
-    
-    
     private let cellSpacing: CGFloat = 5
     
+    //MARK: - Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
         

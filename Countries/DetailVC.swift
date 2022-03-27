@@ -10,11 +10,13 @@ import Kingfisher
 
 class DetailVC: UIViewController {
     
+    //MARK: - Outlets
     @IBOutlet weak var moreInfoBut: UIButton!
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var cLbl: UILabel!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
+    //MARK: - Variables
     private var country: Country!
     private var favImage: UIImage!
     
@@ -30,7 +32,8 @@ class DetailVC: UIViewController {
             moreInfoBut.isEnabled = true
         }
     }
-
+    
+    //MARK: - Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBarController?.tabBar.isHidden = true
@@ -56,6 +59,7 @@ class DetailVC: UIViewController {
 
     }
     
+    //MARK: - Helpers
     func attString(t1: String, t2: String) -> NSMutableAttributedString {
         let boldText = t1
         let attrs = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 15)]

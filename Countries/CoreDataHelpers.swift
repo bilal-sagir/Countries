@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 
 class CoreDataHelpers{
+    
     static func save(country: Country){
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
             let context = appDelegate.persistentContainer.viewContext
@@ -64,11 +65,9 @@ class CoreDataHelpers{
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
             let context = appDelegate.persistentContainer.viewContext
             
-            //guard let entityDescription = NSEntityDescription.entity(forEntityName: "CountryCore", in: context) else { return }
             let fetchRequest = NSFetchRequest<CountryCore>(entityName: "CountryCore")
             
             do{
-                
                 let countries = try context.fetch(fetchRequest)
                 
                 for i in countries{
@@ -78,13 +77,12 @@ class CoreDataHelpers{
                     }
                 }
                 
-                var array = [Country]()
+                var array = [Country]()  //writing deleted array to singleton array
                 let new = try context.fetch(fetchRequest)
                 for k in new{
                     array.append(Country(name: k.name!, code: k.code!))
                 }
                 SCTransfer.instance.countries = array
-                
                 
                 try context.save()
                 print("Saved delete")

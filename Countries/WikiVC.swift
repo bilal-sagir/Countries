@@ -10,10 +10,13 @@ import WebKit
 
 class WikiVC: UIViewController, WKUIDelegate, WKNavigationDelegate {
 
+    //MARK: - Outlets
     @IBOutlet weak var webView: WKWebView!
     
+    //MARK: - Variables
     var wikiCode: String = ""
     
+    //MARK: - Lifecycles
     override func loadView() {
         
         let webConfig = WKWebViewConfiguration()
@@ -32,6 +35,7 @@ class WikiVC: UIViewController, WKUIDelegate, WKNavigationDelegate {
         webView.load(myReq)
     }
     
+    //MARK: - Delegations
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         if let host = navigationAction.request.url?.absoluteString{
             if host.contains(wikiCode){
