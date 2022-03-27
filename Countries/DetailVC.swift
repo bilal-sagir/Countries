@@ -15,12 +15,15 @@ class DetailVC: UIViewController {
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     private var country: Country!
+    private var favImage: UIImage!
+    
     private var flag: String = ""{
         didSet{
             self.imgView.kf.setImage(with: URL(string: flag), options: [.processor(SVGImgProcessor())])
             spinner.stopAnimating()
         }
     }
+    
     private var wikiDataId: String = ""{
         didSet{
             print(wikiDataId)
@@ -33,10 +36,11 @@ class DetailVC: UIViewController {
         spinner.startAnimating()
         
         country = SCTransfer.instance.country
+        
+        favStarDecider()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: favImage, style: .plain, target: self, action: #selector(handleFavTapped))
+        
         cLbl.attributedText = attString(t1: "Country Code: ", t2: country.code)
-        
-        
-        
         navigationItem.title = country.name
         
         Apicall.fetchCountries(code: country.code!) { dto in
@@ -60,6 +64,25 @@ class DetailVC: UIViewController {
         return attributedString
     }
     
+    func favStarDecider(){
+        guard let countries = SCTransfer.instance.countries else { return }
+        if countries.contains(country){
+            favImage = UIImage(systemName: "star.fill")
+        }else{
+            favImage = UIImage(systemName: "star")
+        }
+    }
+    
     @IBAction func buttonTapped(_ sender: UIButton) {
+    }
+    
+    @objc func handleFavTapped() {
+        if favImage == UIImage(systemName: "star.fill"){
+            SCTransfer.instance.countries = SCTransfer.instance.countries!.filter{$0 != country}
+            navigationItem.rightBarButtonItem?.image = UIImage(systemName: "star")
+        }else{
+            SCTransfer.instance.countries?.append(country)
+            navigationItem.rightBarButtonItem?.image = UIImage(systemName: "star.fill")
+        }
     }
 }
