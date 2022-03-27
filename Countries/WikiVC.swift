@@ -11,7 +11,6 @@ import WebKit
 class WikiVC: UIViewController, WKUIDelegate, WKNavigationDelegate {
 
     @IBOutlet weak var webView: WKWebView!
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var wikiCode: String = ""
     

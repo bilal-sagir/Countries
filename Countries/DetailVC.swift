@@ -47,7 +47,7 @@ class DetailVC: UIViewController {
         cLbl.attributedText = attString(t1: "Country Code: ", t2: country.code)
         navigationItem.title = country.name
         
-        Apicall.fetchCountries(code: country.code!) { dto in
+        API.fetchCountry(code: country.code!) { dto in
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 self.flag = dto.data.flagImageURI
                 self.wikiDataId = dto.data.wikiDataID
@@ -87,9 +87,11 @@ class DetailVC: UIViewController {
         if favImage == UIImage(systemName: "star.fill"){
             SCTransfer.instance.countries = SCTransfer.instance.countries!.filter{$0 != country}
             navigationItem.rightBarButtonItem?.image = UIImage(systemName: "star")
+            CoreDataHelpers.delete(country: country)
         }else{
             SCTransfer.instance.countries?.append(country)
             navigationItem.rightBarButtonItem?.image = UIImage(systemName: "star.fill")
+            CoreDataHelpers.save(country: country)
         }
     }
 }

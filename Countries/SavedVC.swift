@@ -68,6 +68,8 @@ extension SavedVC: UITableViewDelegate, UITableViewDataSource{
         
         cell.buttonPressed = { [weak self] in
             guard let self = self else { return }
+            
+            CoreDataHelpers.delete(country: self.favCountries[indexPath.section])
             self.favCountries = self.favCountries.filter{$0 != self.favCountries[indexPath.section] }
         }
         return cell

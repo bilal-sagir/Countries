@@ -16,6 +16,7 @@ class HomeVC: UIViewController {
     private var favCountries = [Country](){
         didSet{
             SCTransfer.instance.countries = favCountries
+            countriesTableView.reloadData()
         }
     }
     
@@ -24,7 +25,7 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Apicall.fetchCountries { [weak self] (countryList) in
+        API.fetchCountries { [weak self] (countryList) in
             self!.countries = countryList
             
             DispatchQueue.main.async {
@@ -34,8 +35,10 @@ class HomeVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        CoreDataHelpers.retrieveList()
         favCountries = SCTransfer.instance.countries ?? []
         countriesTableView.reloadData()
+        
         tabBarController?.tabBar.isHidden = false
     }
 }
@@ -74,26 +77,32 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource{
         cell.layer.cornerRadius = 8
         cell.clipsToBounds = true
         
-        
-        
-        if favCountries.contains(countries[indexPath.section]) {
-            
+        if favCountries.contains(where: { $0.code == countries[indexPath.section].code }) {
             cell.FavButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
         }else{
             cell.FavButton.setImage(UIImage(systemName: "star"), for: .normal)
         }
         
         
-        
         cell.buttonPressed = { [weak self] in
             guard let self = self else { return }
-            if self.favCountries.contains(self.countries[indexPath.section]){
+            let f = self.favCountries.contains(where: { $0.code == self.countries[indexPath.section].code })
+            print("---------123-12-312-3", f)
+            //if self.favCountries.contains(self.countries[indexPath.section])
+            if self.favCountries.contains(where: { $0.code == self.countries[indexPath.section].code })
+            {
+                print("silme")
                 
+                
+                CoreDataHelpers.delete(country: self.countries[indexPath.section])
                 self.favCountries = self.favCountries.filter{$0 != self.countries[indexPath.section]}
                 cell.FavButton.setImage(UIImage(systemName: "star"), for: .normal)
-            }else{
                 
+                
+            }else{
+                print("favlama")
                 self.favCountries.append(self.countries[indexPath.section])
+                CoreDataHelpers.save(country: self.countries[indexPath.section])
                 cell.FavButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
             }
         }
