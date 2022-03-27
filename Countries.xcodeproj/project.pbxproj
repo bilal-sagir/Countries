@@ -25,6 +25,7 @@
 		9C4CB12627F00E77006824D5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9C4CB12527F00E77006824D5 /* Kingfisher */; };
 		9C4CB12827F00EC6006824D5 /* imageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4CB12727F00EC6006824D5 /* imageProcessor.swift */; };
 		9C4CB12A27F01EE2006824D5 /* WikiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4CB12927F01EE2006824D5 /* WikiVC.swift */; };
+		9C4CB12E27F036BC006824D5 /* PersistenceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4CB12D27F036BC006824D5 /* PersistenceData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		9C4CB12227F005B4006824D5 /* CountryDetailDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailDTO.swift; sourceTree = "<group>"; };
 		9C4CB12727F00EC6006824D5 /* imageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageProcessor.swift; sourceTree = "<group>"; };
 		9C4CB12927F01EE2006824D5 /* WikiVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiVC.swift; sourceTree = "<group>"; };
+		9C4CB12D27F036BC006824D5 /* PersistenceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceData.swift; sourceTree = "<group>"; };
 		A05615834728D52327CE2350 /* Pods-Countries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Countries.release.xcconfig"; path = "Target Support Files/Pods-Countries/Pods-Countries.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,6 +143,7 @@
 				9C4CB0FB27EFBC4A006824D5 /* SceneDelegate.swift */,
 				9C4CB11C27EFE819006824D5 /* SCTransfer.swift */,
 				9C4CB12727F00EC6006824D5 /* imageProcessor.swift */,
+				9C4CB12D27F036BC006824D5 /* PersistenceData.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C4CB12A27F01EE2006824D5 /* WikiVC.swift in Sources */,
+				9C4CB12E27F036BC006824D5 /* PersistenceData.swift in Sources */,
 				9C4CB11027EFBCEA006824D5 /* Country.swift in Sources */,
 				9C4CB0FE27EFBC4A006824D5 /* HomeVC.swift in Sources */,
 				9C4CB11227EFC4D1006824D5 /* CountriesDTO.swift in Sources */,
