@@ -93,7 +93,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="For More Information →"/>
                                 <connections>
-                                    <action selector="buttonTapped:" destination="E69-lF-t2W" eventType="touchUpInside" id="d7j-t1-T6L"/>
+                                    <segue destination="gfA-Ov-7eo" kind="show" id="NVt-ap-6uU"/>
                                 </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="RZr-AA-zGQ">
@@ -121,12 +121,48 @@
                     <connections>
                         <outlet property="cLbl" destination="Vga-U5-B9D" id="HSe-he-fHs"/>
                         <outlet property="imgView" destination="QCn-Nd-w5z" id="fH2-TR-rWa"/>
+                        <outlet property="moreInfoBut" destination="t2p-fa-xJ1" id="SuD-uA-bQ0"/>
                         <outlet property="spinner" destination="RZr-AA-zGQ" id="aSz-zD-HqW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TdD-0u-1gZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2582.608695652174" y="916.74107142857133"/>
+        </scene>
+        <!--WikiVC-->
+        <scene sceneID="t6J-oA-wqs">
+            <objects>
+                <viewController id="gfA-Ov-7eo" customClass="WikiVC" customModule="Countries" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QnM-0a-VLz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="98C-AQ-CHI">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="VS8-R3-7WB">
+                                <rect key="frame" x="197" y="440" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aCB-qG-TXR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="8t2-KU-xbQ"/>
+                    <connections>
+                        <outlet property="spinner" destination="VS8-R3-7WB" id="oPj-pV-nQL"/>
+                        <outlet property="webView" destination="98C-AQ-CHI" id="fPf-ss-DPg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eCW-ON-8EA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3292.753623188406" y="916.74107142857133"/>
         </scene>
         <!--Countries-->
         <scene sceneID="LEk-et-jo5">

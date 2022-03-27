@@ -10,6 +10,7 @@ import Kingfisher
 
 class DetailVC: UIViewController {
     
+    @IBOutlet weak var moreInfoBut: UIButton!
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var cLbl: UILabel!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
@@ -27,11 +28,15 @@ class DetailVC: UIViewController {
     private var wikiDataId: String = ""{
         didSet{
             print(wikiDataId)
+            moreInfoBut.isEnabled = true
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tabBarController?.tabBar.isHidden = true
+        
+        moreInfoBut.isEnabled = false
         
         spinner.startAnimating()
         
@@ -73,7 +78,10 @@ class DetailVC: UIViewController {
         }
     }
     
-    @IBAction func buttonTapped(_ sender: UIButton) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+            let destinationVC = segue.destination as! WikiVC
+            destinationVC.wikiCode = wikiDataId
     }
     
     @objc func handleFavTapped() {

@@ -36,6 +36,7 @@ class HomeVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         favCountries = SCTransfer.instance.countries ?? []
         countriesTableView.reloadData()
+        tabBarController?.tabBar.isHidden = false
     }
 }
 
