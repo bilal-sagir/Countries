@@ -17,21 +17,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kBJ-j3-5MG">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kBJ-j3-5MG">
                                 <rect key="frame" x="20" y="44" width="374" height="769"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="iPf-kF-Alc" customClass="CountryCell" customModule="Countries" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="374" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="45.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="cell" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iPf-kF-Alc" id="1Mj-Ez-kRH">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="45.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZC-WG-QeA">
-                                                    <rect key="frame" x="318" y="7" width="47" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZC-WG-QeA">
+                                                    <rect key="frame" x="318" y="7" width="47" height="31.5"/>
                                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
@@ -40,6 +38,12 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="zZC-WG-QeA" secondAttribute="trailing" constant="-11" id="JBG-uS-eDQ"/>
+                                                <constraint firstItem="zZC-WG-QeA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1Mj-Ez-kRH" secondAttribute="leading" constant="20" symbolic="YES" id="Qt0-cc-aDb"/>
+                                                <constraint firstItem="zZC-WG-QeA" firstAttribute="centerY" secondItem="1Mj-Ez-kRH" secondAttribute="centerY" id="UQf-Ae-za6"/>
+                                                <constraint firstItem="zZC-WG-QeA" firstAttribute="top" secondItem="1Mj-Ez-kRH" secondAttribute="topMargin" constant="-4" id="jyb-HY-t8d"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="FavButton" destination="zZC-WG-QeA" id="uSM-pS-9hj"/>
@@ -55,6 +59,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kBJ-j3-5MG" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="M6C-WV-2rn"/>
+                            <constraint firstItem="kBJ-j3-5MG" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="nFf-5Y-pyc"/>
+                            <constraint firstItem="kBJ-j3-5MG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-44" id="oUo-oH-Xpu"/>
+                            <constraint firstItem="kBJ-j3-5MG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="uhP-gZ-QkG"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Countries" id="LGw-e0-CcD"/>
                     <connections>
@@ -78,7 +88,7 @@
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vga-U5-B9D">
-                                <rect key="frame" x="20" y="335" width="150" height="21"/>
+                                <rect key="frame" x="20" y="335" width="384" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -87,7 +97,7 @@
                                 <rect key="frame" x="20" y="364" width="239" height="36"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="NHO-fM-oJA"/>
+                                    <constraint firstAttribute="height" constant="36" id="jqx-rN-KE4"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -103,18 +113,18 @@
                         <viewLayoutGuide key="safeArea" id="ML8-0L-wD8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Vga-U5-B9D" firstAttribute="leading" secondItem="22R-Ja-M74" secondAttribute="leadingMargin" id="10n-jd-Owh"/>
-                            <constraint firstItem="Vga-U5-B9D" firstAttribute="top" secondItem="QCn-Nd-w5z" secondAttribute="bottom" constant="8" id="AdX-SU-zDX"/>
-                            <constraint firstItem="ML8-0L-wD8" firstAttribute="trailing" secondItem="t2p-fa-xJ1" secondAttribute="trailing" constant="155" id="DdX-jQ-Kux"/>
-                            <constraint firstItem="QCn-Nd-w5z" firstAttribute="centerX" secondItem="22R-Ja-M74" secondAttribute="centerX" id="Jka-40-7SX"/>
-                            <constraint firstItem="ML8-0L-wD8" firstAttribute="bottom" secondItem="t2p-fa-xJ1" secondAttribute="bottom" constant="413" id="MQ0-TC-YoV"/>
-                            <constraint firstItem="QCn-Nd-w5z" firstAttribute="centerX" secondItem="RZr-AA-zGQ" secondAttribute="centerX" id="PuY-z2-d4h"/>
-                            <constraint firstItem="ML8-0L-wD8" firstAttribute="trailing" secondItem="Vga-U5-B9D" secondAttribute="trailing" constant="244" id="bvq-RU-zm6"/>
-                            <constraint firstItem="t2p-fa-xJ1" firstAttribute="top" secondItem="Vga-U5-B9D" secondAttribute="bottom" constant="8" id="dgF-pe-BSJ"/>
-                            <constraint firstItem="QCn-Nd-w5z" firstAttribute="leading" secondItem="ML8-0L-wD8" secondAttribute="leading" id="qh4-Te-J24"/>
-                            <constraint firstItem="RZr-AA-zGQ" firstAttribute="top" secondItem="ML8-0L-wD8" secondAttribute="top" constant="118" id="r7w-VI-8BF"/>
-                            <constraint firstItem="Vga-U5-B9D" firstAttribute="leading" secondItem="t2p-fa-xJ1" secondAttribute="leading" id="rK4-DF-uHE"/>
-                            <constraint firstItem="QCn-Nd-w5z" firstAttribute="top" secondItem="ML8-0L-wD8" secondAttribute="top" id="y9k-eQ-2fX"/>
+                            <constraint firstAttribute="trailing" secondItem="QCn-Nd-w5z" secondAttribute="trailing" id="0ba-Or-PMS"/>
+                            <constraint firstItem="QCn-Nd-w5z" firstAttribute="leading" secondItem="22R-Ja-M74" secondAttribute="leading" id="1Uw-Ft-HiA"/>
+                            <constraint firstItem="Vga-U5-B9D" firstAttribute="leading" secondItem="t2p-fa-xJ1" secondAttribute="leading" id="8uV-vH-o1i"/>
+                            <constraint firstItem="ML8-0L-wD8" firstAttribute="bottom" secondItem="t2p-fa-xJ1" secondAttribute="bottom" constant="413" id="KzK-na-cTV"/>
+                            <constraint firstItem="t2p-fa-xJ1" firstAttribute="top" secondItem="Vga-U5-B9D" secondAttribute="bottom" constant="8" symbolic="YES" id="O48-xZ-HRE"/>
+                            <constraint firstItem="ML8-0L-wD8" firstAttribute="trailing" secondItem="Vga-U5-B9D" secondAttribute="trailing" constant="10" id="Wo8-FM-4UT"/>
+                            <constraint firstItem="QCn-Nd-w5z" firstAttribute="centerX" secondItem="RZr-AA-zGQ" secondAttribute="centerX" id="Yga-kw-kB3"/>
+                            <constraint firstItem="Vga-U5-B9D" firstAttribute="leading" secondItem="22R-Ja-M74" secondAttribute="leadingMargin" id="khe-oG-a6I"/>
+                            <constraint firstItem="RZr-AA-zGQ" firstAttribute="top" secondItem="ML8-0L-wD8" secondAttribute="top" constant="118" id="lKy-00-l0c"/>
+                            <constraint firstItem="ML8-0L-wD8" firstAttribute="trailing" secondItem="t2p-fa-xJ1" secondAttribute="trailing" constant="155" id="o50-6k-1pW"/>
+                            <constraint firstItem="QCn-Nd-w5z" firstAttribute="top" secondItem="ML8-0L-wD8" secondAttribute="top" id="rin-oT-WfC"/>
+                            <constraint firstItem="Vga-U5-B9D" firstAttribute="top" secondItem="QCn-Nd-w5z" secondAttribute="bottom" constant="8" symbolic="YES" id="ysH-OM-OGe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7WX-7Q-h0L"/>
@@ -172,21 +182,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dvo-gs-CsL">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dvo-gs-CsL">
                                 <rect key="frame" x="20" y="44" width="374" height="769"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Clw-H5-lGn" customClass="CountryCell" customModule="Countries" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="374" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Clw-H5-lGn" id="QVN-9m-Hkk">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LNk-69-h01">
-                                                    <rect key="frame" x="319" y="8" width="47" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LNk-69-h01">
+                                                    <rect key="frame" x="319" y="8" width="47" height="31.5"/>
                                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="star.fill" catalog="system"/>
@@ -195,6 +203,12 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="LNk-69-h01" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QVN-9m-Hkk" secondAttribute="leading" constant="20" symbolic="YES" id="B47-89-87v"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="LNk-69-h01" secondAttribute="trailing" constant="-12" id="Bp1-em-6mO"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="LNk-69-h01" secondAttribute="bottom" constant="-6.5" id="Tfx-LT-Lsw"/>
+                                                <constraint firstItem="LNk-69-h01" firstAttribute="top" secondItem="QVN-9m-Hkk" secondAttribute="topMargin" constant="-3" id="hEq-k6-nZP"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="FavButton" destination="LNk-69-h01" id="klG-xK-c61"/>
@@ -210,6 +224,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JwV-Fk-HvO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dvo-gs-CsL" firstAttribute="top" secondItem="Ggj-Qe-l5Y" secondAttribute="topMargin" constant="-44" id="JrQ-it-Ug4"/>
+                            <constraint firstItem="dvo-gs-CsL" firstAttribute="trailing" secondItem="Ggj-Qe-l5Y" secondAttribute="trailingMargin" id="Lau-ki-cm2"/>
+                            <constraint firstItem="dvo-gs-CsL" firstAttribute="leading" secondItem="Ggj-Qe-l5Y" secondAttribute="leadingMargin" id="RUW-RM-o5c"/>
+                            <constraint firstItem="dvo-gs-CsL" firstAttribute="bottom" secondItem="JwV-Fk-HvO" secondAttribute="bottom" id="xL2-46-ced"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Countries" id="Kxp-DA-A5H"/>
                     <connections>
