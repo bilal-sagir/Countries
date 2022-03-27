@@ -70,7 +70,7 @@ class DetailVC: UIViewController {
     
     func favStarDecider(){
         guard let countries = SCTransfer.instance.countries else { return }
-        if countries.contains(country){
+        if countries.contains(where: { $0.code == country.code }){
             favImage = UIImage(systemName: "star.fill")
         }else{
             favImage = UIImage(systemName: "star")
