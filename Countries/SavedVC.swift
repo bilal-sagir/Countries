@@ -67,6 +67,7 @@ extension SavedVC: UITableViewDelegate, UITableViewDataSource{
             guard var favs = SCTransfer.instance.countries else { return }
             CoreDataHelpers.delete(country: favs[indexPath.section])
             favs = favs.filter{$0 != favs[indexPath.section] }
+            tableView.reloadData()
         }
         return cell
         

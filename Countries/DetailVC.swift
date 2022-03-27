@@ -41,9 +41,6 @@ class DetailVC: UIViewController {
         
         country = SCTransfer.instance.country
         
-        favStarDecider()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: favImage, style: .plain, target: self, action: #selector(handleFavTapped))
-        
         cLbl.attributedText = attString(t1: "Country Code: ", t2: country.code)
         navigationItem.title = country.name
         
@@ -88,10 +85,12 @@ class DetailVC: UIViewController {
             SCTransfer.instance.countries = SCTransfer.instance.countries!.filter{$0 != country}
             navigationItem.rightBarButtonItem?.image = UIImage(systemName: "star")
             CoreDataHelpers.delete(country: country)
+            favImage = UIImage(systemName: "star")
         }else{
             SCTransfer.instance.countries?.append(country)
             navigationItem.rightBarButtonItem?.image = UIImage(systemName: "star.fill")
             CoreDataHelpers.save(country: country)
+            favImage = UIImage(systemName: "star.fill")
         }
     }
 }

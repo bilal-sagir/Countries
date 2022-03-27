@@ -93,6 +93,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource{
                 CoreDataHelpers.save(country: self.countries[indexPath.section])
                 cell.FavButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
             }
+            CoreDataHelpers.retrieveList()
         }
         return cell
         

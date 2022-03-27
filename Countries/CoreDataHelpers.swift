@@ -21,9 +21,7 @@ class CoreDataHelpers{
                 let countries = try context.fetch(fetchRequest)
                 let found = countries.contains(where: { $0.code == country.code })
                 
-                print(found, countries)
                 if found{
-                    print("retunr calıstı")
                     return
                 }
                 
@@ -55,8 +53,7 @@ class CoreDataHelpers{
                 }
                 
                 SCTransfer.instance.countries = array
-                print("aray: \(array)")
-                print("trans: \(SCTransfer.instance.countries!)")
+                print("Retrieve")
             }catch{
                 print("Could not retrieve")
             }
