@@ -28,8 +28,21 @@ class Apicall{
             
             completionHandler(countries)
         }
-        
     }
+    
+    static func fetchCountries(code: String, completionHandler: @escaping (CountryDetailDTO) -> Void) {
+        
+        let url = "https://wft-geo-db.p.rapidapi.com/v1/geo/countries/\(code)"
+        
+        
+        AF.request(url, method: .get, headers: headers).responseDecodable(of: CountryDetailDTO.self) { response in
+            guard let response = response.value else { return }
+        
+            completionHandler(response)
+        }
+    }
+    
+    
 
     
 }

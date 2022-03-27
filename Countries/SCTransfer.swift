@@ -9,7 +9,9 @@ import Foundation
 
 class SCTransfer{
     static let instance = SCTransfer()
+    
     var countries: [Country]?
+    var country: Country?
     
     private init(){
         

@@ -74,7 +74,7 @@ extension SavedVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("DEBUG: cell selected \(favCountries[indexPath.section].name!)")
+        SCTransfer.instance.country = favCountries[indexPath.section]
     }
 }
 
