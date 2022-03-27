@@ -8,6 +8,7 @@ target 'Countries' do
   # Pods for Countries
 
   pod 'Alamofire', '~> 5.5'
+  pod 'SVGKit', :git => 'https://github.com/SVGKit/SVGKit.git', :branch => '3.x'
 
 
 end
