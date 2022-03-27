@@ -94,13 +94,12 @@
 		9C4CB0F827EFBC4A006824D5 /* Countries */ = {
 			isa = PBXGroup;
 			children = (
+				9C4CB12C27F0301A006824D5 /* Model */,
+				9C4CB12B27F02FF1006824D5 /* Helpers */,
 				9C4CB11A27EFDBA9006824D5 /* Controllers */,
-				9C4CB0F927EFBC4A006824D5 /* AppDelegate.swift */,
-				9C4CB0FB27EFBC4A006824D5 /* SceneDelegate.swift */,
-				9C4CB0FF27EFBC4A006824D5 /* Main.storyboard */,
-				9C4CB10F27EFBCEA006824D5 /* Country.swift */,
 				9C4CB11B27EFDBD1006824D5 /* Network */,
 				9C4CB10227EFBC4B006824D5 /* Assets.xcassets */,
+				9C4CB0FF27EFBC4A006824D5 /* Main.storyboard */,
 				9C4CB10427EFBC4B006824D5 /* LaunchScreen.storyboard */,
 				9C4CB10727EFBC4B006824D5 /* Info.plist */,
 			);
@@ -118,12 +117,10 @@
 		9C4CB11A27EFDBA9006824D5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9C4CB11C27EFE819006824D5 /* SCTransfer.swift */,
 				9C4CB11927EFDB94006824D5 /* CellModel */,
 				9C4CB0FD27EFBC4A006824D5 /* HomeVC.swift */,
 				9C4CB11E27EFE999006824D5 /* SavedVC.swift */,
 				9C4CB12027F00256006824D5 /* DetailVC.swift */,
-				9C4CB12727F00EC6006824D5 /* imageProcessor.swift */,
 				9C4CB12927F01EE2006824D5 /* WikiVC.swift */,
 			);
 			name = Controllers;
@@ -133,10 +130,29 @@
 			isa = PBXGroup;
 			children = (
 				9C4CB10D27EFBC91006824D5 /* Apicall.swift */,
-				9C4CB11127EFC4D1006824D5 /* CountriesDTO.swift */,
-				9C4CB12227F005B4006824D5 /* CountryDetailDTO.swift */,
 			);
 			name = Network;
+			sourceTree = "<group>";
+		};
+		9C4CB12B27F02FF1006824D5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9C4CB0F927EFBC4A006824D5 /* AppDelegate.swift */,
+				9C4CB0FB27EFBC4A006824D5 /* SceneDelegate.swift */,
+				9C4CB11C27EFE819006824D5 /* SCTransfer.swift */,
+				9C4CB12727F00EC6006824D5 /* imageProcessor.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		9C4CB12C27F0301A006824D5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9C4CB11127EFC4D1006824D5 /* CountriesDTO.swift */,
+				9C4CB12227F005B4006824D5 /* CountryDetailDTO.swift */,
+				9C4CB10F27EFBCEA006824D5 /* Country.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		BE8E6BF0708C451F4D323AF0 /* Frameworks */ = {

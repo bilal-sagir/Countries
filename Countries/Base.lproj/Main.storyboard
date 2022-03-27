@@ -241,7 +241,7 @@
         <scene sceneID="cia-un-mIq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hgA-ed-lp6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" selectedImage="house" id="PZk-lE-zIx"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" selectedImage="house.fill" id="PZk-lE-zIx"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HSh-az-c5a">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -260,7 +260,7 @@
         <scene sceneID="CC7-jm-uVc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ib4-4j-G9n" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Saved" image="heart" catalog="system" selectedImage="heart" id="6gW-ex-ghA"/>
+                    <tabBarItem key="tabBarItem" title="Saved" image="heart.fill" catalog="system" selectedImage="heart.fill" id="6gW-ex-ghA"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="E3P-70-oye">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -280,8 +280,8 @@
         <segue reference="8Tp-ce-KNe"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="heart" catalog="system" width="128" height="109"/>
-        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <namedColor name="AccentColor">

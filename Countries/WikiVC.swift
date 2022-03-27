@@ -16,24 +16,18 @@ class WikiVC: UIViewController, WKUIDelegate, WKNavigationDelegate {
     var wikiCode: String = ""
     
     override func loadView() {
-
-        
         
         let webConfig = WKWebViewConfiguration()
         webView = WKWebView(frame: .zero, configuration: webConfig)
         webView.uiDelegate = self
         webView.navigationDelegate = self
         view = webView
-    
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    
 
         let myURL = URL(string: "https://www.wikidata.org/wiki/\(wikiCode)")
-
         let myReq = URLRequest(url: myURL!)
 
         webView.load(myReq)
@@ -48,8 +42,6 @@ class WikiVC: UIViewController, WKUIDelegate, WKNavigationDelegate {
         }
         decisionHandler(.cancel)
     }
-    
-    
     
     deinit{
         print("DEBUG: deinit happend wiki")

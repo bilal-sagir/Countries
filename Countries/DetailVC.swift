@@ -27,7 +27,6 @@ class DetailVC: UIViewController {
     
     private var wikiDataId: String = ""{
         didSet{
-            print(wikiDataId)
             moreInfoBut.isEnabled = true
         }
     }

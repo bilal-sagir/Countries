@@ -102,7 +102,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("DEBUG: cell selected \(countries[indexPath.section].name!)")
+
         SCTransfer.instance.country = countries[indexPath.section]
     }
 }
