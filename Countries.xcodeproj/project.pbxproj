@@ -23,6 +23,7 @@
 		9C4CB12127F00256006824D5 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4CB12027F00256006824D5 /* DetailVC.swift */; };
 		9C4CB12327F005B4006824D5 /* CountryDetailDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4CB12227F005B4006824D5 /* CountryDetailDTO.swift */; };
 		9C4CB12627F00E77006824D5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9C4CB12527F00E77006824D5 /* Kingfisher */; };
+		9C4CB12827F00EC6006824D5 /* imageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4CB12727F00EC6006824D5 /* imageProcessor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		9C4CB11E27EFE999006824D5 /* SavedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedVC.swift; sourceTree = "<group>"; };
 		9C4CB12027F00256006824D5 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		9C4CB12227F005B4006824D5 /* CountryDetailDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailDTO.swift; sourceTree = "<group>"; };
+		9C4CB12727F00EC6006824D5 /* imageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageProcessor.swift; sourceTree = "<group>"; };
 		A05615834728D52327CE2350 /* Pods-Countries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Countries.release.xcconfig"; path = "Target Support Files/Pods-Countries/Pods-Countries.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,6 +121,7 @@
 				9C4CB0FD27EFBC4A006824D5 /* HomeVC.swift */,
 				9C4CB11E27EFE999006824D5 /* SavedVC.swift */,
 				9C4CB12027F00256006824D5 /* DetailVC.swift */,
+				9C4CB12727F00EC6006824D5 /* imageProcessor.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				9C4CB0FC27EFBC4A006824D5 /* SceneDelegate.swift in Sources */,
 				9C4CB12327F005B4006824D5 /* CountryDetailDTO.swift in Sources */,
 				9C4CB11D27EFE819006824D5 /* SCTransfer.swift in Sources */,
+				9C4CB12827F00EC6006824D5 /* imageProcessor.swift in Sources */,
 				9C4CB11727EFDB89006824D5 /* CountryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
