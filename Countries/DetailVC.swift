@@ -41,6 +41,9 @@ class DetailVC: UIViewController {
         
         country = SCTransfer.instance.country
         
+        favStarDecider()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: favImage, style: .plain, target: self, action: #selector(handleFavTapped))
+        
         cLbl.attributedText = attString(t1: "Country Code: ", t2: country.code)
         navigationItem.title = country.name
         
